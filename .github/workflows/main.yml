@@ -1,0 +1,24 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# env:
+#   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+#   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+#   TURBO_REMOTE_ONLY: true
+#   NODE_VERSION: "16"
+
+jobs:
+  main:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: lowply/deploy-firebase@v0.0.5
+      env:
+        FIREBASE_TOKEN: 1//09LfNoiWISr1VCgYIARAAGAkSNwF-L9IrSt7mxTkMEj589gdxE1e6xRTFIc-1qF-mq66gCDkOcGkWxDUI1-mAqWv_W2vzevZJNq0 #${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_PROJECT: i----i
